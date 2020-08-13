@@ -24,6 +24,7 @@ class ServiceRegistry {
   }
 
   register(name: string, version: string, ip: string, port: string): string {
+    this.cleanup();
     const key = name + version + ip + port;
     let action = 'Updated';
 
