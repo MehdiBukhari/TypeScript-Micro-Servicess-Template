@@ -1,7 +1,7 @@
 import * as semver from 'semver';
 import Config from '../../config';
 
-class LoginService {
+class UserService {
   private user: any;
   constructor(log: any) {
     this.user = {};
@@ -13,4 +13,4 @@ class LoginService {
   }
 }
 
-export default LoginService;
+export default UserService;

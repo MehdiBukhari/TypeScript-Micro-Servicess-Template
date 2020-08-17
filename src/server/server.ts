@@ -1,6 +1,6 @@
 import express = require('express');
 import Config from '../config';
-import LoginService from './lib/loginService';
+import UserService from './lib/userService';
 import { Request, Response, NextFunction } from 'express';
 
 class Server {
@@ -8,7 +8,7 @@ class Server {
 
   private config: Config;
 
-  private loginService: LoginService;
+  private userService: UserService;
 
   constructor() {
     this.express = express();
@@ -25,7 +25,7 @@ class Server {
       this.config = new Config('info');
     }
 
-    this.loginService = new LoginService(this.config.log);
+    this.userService = new UserService(this.config.log);
 
     this.mountRoutes();
   }
