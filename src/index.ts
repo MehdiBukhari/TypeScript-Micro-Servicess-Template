@@ -15,8 +15,19 @@ async function initialize() {
           server.address().port
         }`
       );
+    const UnregisterService = () =>
+      axios.delete(
+        `http://localhost:3000/register/${config.name}/${config.version}/${
+          server.address().port
+        }`
+      );
     registerService();
     const interval = setInterval(registerService, 20000);
+    const cleanup = async () => {
+      clearInterval(interval);
+      await UnregisterService();
+    };
+
     config.log.info(
       `Hi there! I'm listening on port ${
         server.address().port
