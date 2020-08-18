@@ -8,7 +8,7 @@ class LoginService {
   }
 
   get(): any {
-    const sample ='jeffs';
+    const sample = 'jeffs';
     return sample;
   }
 }

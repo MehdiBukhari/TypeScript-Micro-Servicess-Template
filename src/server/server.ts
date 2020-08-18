@@ -44,11 +44,11 @@ class Server {
     }); */
 
     router.get('/list', (req, res) => {
-      return res.json('Not implemented');
+      return res.json('Client Not implemented');
     });
 
     router.get('/list-short', (req, res) => {
-      return res.json('Not implemented');
+      return res.json('Client Not implemented');
     });
 
     this.express.use('/', router);
